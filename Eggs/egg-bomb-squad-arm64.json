@@ -1,0 +1,31 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2022-08-01T14:35:35-04:00",
+    "name": "BombSquad Arm64",
+    "author": "krisdookharan15@gmail.com",
+    "description": null,
+    "features": null,
+    "docker_images": {
+        "viruslauncher\/bombsquad:arm64": "viruslauncher\/bombsquad:arm64"
+    },
+    "file_denylist": [],
+    "startup": ".\/bombsquad_server",
+    "config": {
+        "files": "{}",
+        "startup": "{}",
+        "logs": "{}",
+        "stop": "^^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/bash\r\n# BombSquad 1.7 Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\n\r\ncd \/mnt\/server\r\napk --update add curl\r\n\r\ncurl https:\/\/files.ballistica.net\/bombsquad\/builds\/BombSquad_Server_Linux_Arm64_1.7.6.tar.gz -o bombsquad.tar.gz\r\n\r\ntar -xf bombsquad.tar.gz -C \/mnt\/server\r\n\r\ncp -r .\/BombSquad_Server_Linux_Arm64_1.7.6\/dist \/mnt\/server\/\r\ncp -r .\/BombSquad_Server_Linux_Arm64_1.7.6\/bombsquad_server \/mnt\/server\/\r\ncp -r .\/BombSquad_Server_Linux_Arm64_1.7.6\/config.yaml \/mnt\/server\/\r\ncp .\/BombSquad_Server_Linux_Arm64_1.7.6\/README.txt \/mnt\/server\/\r\n\r\nchmod 777 \/mnt\/server\r\n\r\nrm -rf .\/bombsquad.tar.gz\r\nrm -rf .\/BombSquad_Server_Linux_Arm64_1.7.6\r\n\r\necho -e \"install complete\"\r\nexit 0",
+            "container": "alpine:latest",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": []
+}
