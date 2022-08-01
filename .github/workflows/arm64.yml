@@ -8,7 +8,7 @@ on:
     branches:
       - main
     paths:
-      - ./images/Arm64/**
+      - ./Images/Arm64/**
       
 jobs:
   push:
@@ -26,8 +26,8 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - uses: docker/build-push-action@v2
         with:
-          context: ./images/Arm64
-          file: ./images/Arm64/Dockerfile
+          context: ./Images/Arm64
+          file: ./Images/Arm64/Dockerfile
           platforms: linux/arm64
           push: true
           tags: |
