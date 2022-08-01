@@ -16,7 +16,7 @@
     "startup": ".\/bombsquad_server",
     "config": {
         "files": "{}",
-        "startup": "{}",
+        "startup": "{\r\n    \"done\": \"Launching server subprocess...\"\r\n}",
         "logs": "{}",
         "stop": "^^C"
     },
